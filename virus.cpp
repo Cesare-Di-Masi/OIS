@@ -6,6 +6,8 @@ using namespace std;
 int main()
 {
 
+   
+
     ifstream cin("input.txt");
     ofstream cout("output.txt");
 
@@ -13,7 +15,7 @@ int main()
 
     for(int h=0; h<t; h++)
     {
-        int P[4]; 
+        int P[4];  bool found = false;
 
         for(int i=0; i<4; i++)
         {
@@ -22,28 +24,28 @@ int main()
 
         int n=0; cin>>n;
 
-        map<string,int[4]> S;
-        map<string,int> E;
+         map<string,vector<int>> S;
+         map<string,int> E;
 
         for(int i=0; i<4; i++)
         {
             string str;
             cin>>str;
-            for(int j=0; i<str.length()-4; j++)
+            for(int j=0; j<str.length()-n; j++)
             {
-                string used;
-                for(int k=j;k<j+4;k++)
-                {
-                    used+=str[k];
-                }
+                string used = str.substr(j,n);
 
+                if (S[used].size() < 4) 
+                S[used].resize(4, -1); 
+                
+                
                 S[used][i] = j;
                 E[used]++;
 
-                if(E[used] == 4)
+                if(E[used] == 4 && !found)
                 {
                     
-                    cout<< "Case" << " " << "#" << h+1 << ":" << " ";
+                    cout<< "Case #" << h+1 << ": ";
 
                     for(int k=0; k<4;k++)
                     {
@@ -52,6 +54,8 @@ int main()
                     }
                     cout<<'\n';
                     
+                    found = true;
+
                 }
 
             }
