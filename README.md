@@ -1,0 +1,1 @@
+ - [📁](./src/ois_seti/) **[ois_seti](https://training.olinfo.it/task/ois_seti)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
