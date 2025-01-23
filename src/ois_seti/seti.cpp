@@ -1,28 +1,25 @@
-#include <stdio.h>
-#include <assert.h>
-
-#define MAXN 1000000
-
-int receive(int N, int V[]) {
-    // insert your code here
-    return 42;
-}
-
-
-int V[MAXN];
-
+#include <bits/stdc++.h>
+using namespace std;
 int main() {
-    FILE *fr, *fw;
-    int N, i;
+    int N;
+    int ds = 1e9+7;
 
-    fr = fopen("input.txt", "r");
-    fw = fopen("output.txt", "w");
-    assert(1 == fscanf(fr, "%d", &N));
-    for(i=0; i<N; i++)
-        assert(1 == fscanf(fr, "%d", &V[i]));
+    ifstream cin("input.txt");
+    ofstream cout("output.txt");
 
-    fprintf(fw, "%d\n", receive(N, V));
-    fclose(fr);
-    fclose(fw);
-    return 0;
+    cin>>N;
+    vector<int>V(N);
+    for(int i=0; i<N; i++)
+        cin>>V[i];
+    
+
+    vector<int> dp(N+1);
+
+    dp[0] = 1;
+
+    for(int i = 1; i<=N; i++)
+    {
+        dp[i] = (dp[i-1] + dp[max(0, i - 1 - V[i-1])])%ds;
+    }
+    cout<<dp[N]<< '\n';    
 }
