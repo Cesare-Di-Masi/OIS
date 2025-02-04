@@ -1,32 +1,39 @@
-/*
- * This template is valid both in C and in C++,
- * so you can expand it with code from both languages.
- * NOTE: it is recommended to use this even if you don't
- * understand the following code.
- */
+#include <bits/stdc++.h>
 
-#include <stdio.h>
-#include <assert.h>
+using namespace std;
 
-// constraints
-#define MAXN 100000
-#define MAXW 21
+ifstream fin("input.txt");
+ofstream fout("output.txt");
 
-// input data
-int N, K, i;
-char W[MAXN][MAXW];
+int main()
+{
+    int n, k, cont, l;
+    fin>>n>>k;
+    string parola;
+    getline(fin, parola);
 
-int main() {
-//  uncomment the following lines if you want to read/write from files
-//  freopen("input.txt", "r", stdin);
-//  freopen("output.txt", "w", stdout);
+    cont=0;
+    for(int i=0; i<n; i++)
+    {
+        //leggo la parola
+        getline(fin, parola);
+        l = parola.length();
+        //vedo se poso stamparla
+        if(cont + l<= k)
+        {
+             //la stampo e aumento il conteggio conteggiando anche lo spazio
+            fout<<parola<<" ";
 
-    assert(2 == scanf("%d%d", &N, &K));
-    for(i=0; i<N; i++)
-        assert(1 == scanf("%s", W[i]));
+        }
+        else{
+            cont = 0;
+            fout<<endl<<parola<<" ";
+        }
 
-    // insert your code here
-    
-    printf("%d\n", 42); // print the result
+        cont += l+1;
+
+    }
+
+
     return 0;
 }

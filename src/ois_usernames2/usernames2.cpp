@@ -1,34 +1,40 @@
-// NOTE: it is recommended to use this even if you don't understand the following code.
-
-#include <fstream>
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main() {
-    // uncomment the two following lines if you want to read/write from files
-    // ifstream cin("input.txt");
-    // ofstream cout("output.txt");
+int main()
+{
 
-    string S;
-    cin >> S;
-    
+    ifstream cin("input.txt");
+    ofstream cout("output.txt");
+
     int N;
-    cin >> N;
+    string name, usedName;
+    set<string> s;
     
-    vector<string> U(N);
-    for (int i = 0; i < N; ++i)
-        cin >> U[i];
-    
-    string T = "";
-    
-    
-    // INSERT YOUR CODE HERE
-    
-    
-    cout << T << endl;
+    cin>>name>>N;
 
-    return 0;
+    usedName=name;
+
+    for(int i=0; i<N; i++)
+    {
+        string a;
+        cin>>a;
+        s.insert(a);
+    }
+
+    int counter=1;
+    
+
+    for(int i=0; i<N; i++)
+    {
+        if(s.count(usedName)==true)
+        {
+            usedName=name + to_string(counter);
+            counter++;
+        }
+    }
+
+    cout<<usedName;
+
 }

@@ -1,23 +1,42 @@
-/*
- * This template is valid both in C and in C++,
- * so you can expand it with code from both languages.
- */
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
 
-#include <assert.h>
-#include <stdio.h>
+   ifstream fin ("input.txt");
+   ofstream fout ("output.txt");
 
-// input data
-long long R, C, K;
+    long Columns, Rows, K, PostiC, PostiR, PostiTot;
+    // lettura di input >>
+    //da dove leggo >> dove voglio memorizzare
+    //scrittura di output <<
+    //dove scrivo>>cosa voglio scrivere
 
-int main() {
-  //  uncomment the following lines if you want to read/write from files
-  //  freopen("input.txt", "r", stdin);
-  //  freopen("output.txt", "w", stdout);
+    fin>>Rows;
+    fin>>Columns;
+    fin>>K;
 
-  assert(3 == scanf("%lld %lld %lld", &R, &C, &K));
+    if(Columns%K==0)
+        {
+             PostiC=Columns/K;
+        }
+        else
+        {
+             PostiC=Columns/K+1;
+        }
 
-  // insert your code here
+    if(Rows%K==0)
+        {
+             PostiR=Rows/K;
+        }
+        else
+        {
+             PostiR=Rows/K+1;
+        }
 
-  printf("%lld\n", 42);  // print the result
-  return 0;
+    PostiTot=PostiC*PostiR;
+    fout<<PostiTot;
+
+
+    return 0;
 }

@@ -1,30 +1,61 @@
-/*
- * This template is valid both in C and in C++,
- * so you can expand it with code from both languages.
- * NOTE: it is recommended to use this even if you don't
- * understand the following code.
- */
+#include <bits/stdc++.h>
+using namespace std;
 
-#include <stdio.h>
-#include <assert.h>
 
-// input data
-int A[4], B[4];
+int main()
+{
+    ifstream fin ("input.txt");
+    ofstream fout ("output.txt");
 
-int main() {
-//  uncomment the following lines if you want to read/write from files
-//  freopen("input.txt", "r", stdin);
-//  freopen("output.txt", "w", stdout);
+    vector<int>f(4);
+    vector<int>s(4);
+    vector<int>d(4);
 
-    assert(4 == scanf("%d.%d.%d.%d", &A[0], &A[1], &A[2], &A[3]));
-    assert(4 == scanf("%d.%d.%d.%d", &B[0], &B[1], &B[2], &B[3]));
-    
-    // at this point, the arrays A and B contain four elements each with the individual IP octects
-    // for example: 192.168.1.1 creates an array [192, 168, 1, 1] with 192 at index 0
+    string first, second;
 
-    // insert your code here
-    long long result = 42;
+    fin>>first>>second;
 
-    printf("%lld\n", result);  // print the result
+    int pos;
+    string delimiter = ".";
+    int i =0;
+    //finchè trovo un . (potevo fare anche un for che dura 3 iterazioni
+    while ((pos = first.find(delimiter)) != string::npos)
+    {
+        //estrapolo il numero
+        string token = first.substr(0, pos);
+        //converto a intero e lo salvo nel vector
+        f[i]=stoi(token);
+        //cancello il token e il punto dalla stringa
+        first.erase(0, pos + delimiter.length());
+        
+        i++;
+    }
+    //converto l'ultimo valore rimasto
+    f[i] = stoi(first);
+
+    //faccio la stessa cosa su second 
+    //(sapendo che l'indirizzo è sempre ben formattato avrei potuto 
+    //fare un solo ciclo che si ripeteva 3 volte ed al suo interno avrei potuto calcolare sia il pos di first sia quello di second)
+    i =0;
+    while ((pos = second.find(delimiter)) != string::npos)
+    {
+        string token = second.substr(0, pos);
+        second.erase(0, pos + delimiter.length());
+        s[i]=stoi(token);
+        i++;
+    }
+    s[i] = stoi(second);
+
+
+//per il risultato ho bisogno di un long
+//ogni ottetto mi permette di generare una potenza di 256 valori
+    long res = 1;
+    for(int i=0; i<4;i++)
+    {
+        res = res+ (s[i]-f[i])*pow(256,3-i);
+    }
+
+    fout<<res;
+
     return 0;
 }

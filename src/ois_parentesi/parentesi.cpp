@@ -1,31 +1,80 @@
-#include <stdio.h>
-#include <assert.h>
-
-#define MAXN 10000
-
-int controlla(int N, char E[]) {
-    // Mettete qui il codice della soluzione
-    return -1;
-}
+#include <bits/stdc++.h>
+using namespace std;
 
 
-char E[MAXN + 5]; // Maggiore di MAXN per contenere newline e null
+int main()
+{
+    ifstream fin ("input.txt");
+    ofstream fout ("output.txt");
 
-int main() {
-    FILE *fr, *fw;
-    int N, i;
+    int n;
+    string s;
 
-    fr = fopen("input.txt", "r");
-    fw = fopen("output.txt", "w");
-    assert(1 == fscanf(fr, "%d\n", &N));
-    assert(fgets(E, MAXN + 5, fr) == E);
-    E[N] = 0;
-    
-    if (controlla(N, E) < 0)
-        fprintf(fw, "malformata\n");
+    fin>>n>>s;
+
+    stack<char> parentesi;
+
+    for (char c: s)
+    {
+        //se la parentesi é aperta la aggiungo alla pila
+        if(c=='<' || c=='(' || c=='[' || c=='{')
+        {
+            parentesi.push(c);
+        }
+        else
+        {
+            //se é chiusa deve chiudere l'iultima parentesi aperta altrimeni le parentesi non sono bilanciate
+            char topEl = ' ';
+            if(!parentesi.empty())
+            {
+                topEl = parentesi.top();
+            }
+            switch(c)
+            {
+                case '>':
+                    if(topEl!='<')
+                    {
+                        fout<<"malformata";
+                        return 0;
+                    }
+                    break;
+                case ')':
+                    if(topEl!='(')
+                    {
+                        fout<<"malformata";
+                        return 0;
+                    }
+                    break;
+                case ']':
+                    if(topEl!='[')
+                    {
+                        fout<<"malformata";
+                        return 0;
+                    }
+                    break;
+                case '}':
+                    if(topEl!='{')
+                    {
+                        fout<<"malformata";
+                        return 0;
+                    }
+                    break;
+            }
+            //se arrivo qui la parentesi é corretta tolgo la testa dalla pila
+            parentesi.pop();
+        }
+
+    }
+
+    //se la pila é vuota é ben formata
+    if(parentesi.empty())
+    {
+        fout<<"corretta";
+    }
     else
-        fprintf(fw, "corretta\n");
-    fclose(fr);
-    fclose(fw);
+    {
+            fout<<"malformata";
+    }
+
     return 0;
 }

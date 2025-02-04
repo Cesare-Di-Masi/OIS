@@ -1,25 +1,33 @@
-// NOTE: it is recommended to use this even if you don't understand the following code.
-
-#include <iostream>
-#include <fstream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-// input data
-int N;
-string S;
 
-int main() {
-//  uncomment the following lines if you want to read/write from files
-//  ifstream cin("input.txt");
-//  ofstream cout("output.txt");
+int main()
+{
+    int n;
+    string s;
 
-    cin >> N;
-    cin >> S;
+    ifstream fin ("input.txt");
+    ofstream fout ("output.txt");
 
-    // insert your code here
+    fin>>n;
+    fin>>s;
 
-    cout << 42 << endl; // print the result
-    return 0;
+    int finalPosition=0;
+
+    for(char c : s)
+    {
+        if(c=='R')
+        {
+            finalPosition -= 1;
+        }
+        else{
+            finalPosition +=1;
+        }
+    }
+
+    int res = abs(finalPosition);
+    fout<<res;
+
 }

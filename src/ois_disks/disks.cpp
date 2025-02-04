@@ -1,22 +1,27 @@
-// NOTE: it is recommended to use this even if you don't understand the following code.
-
-#include <iostream>
-#include <fstream>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
-
 int main() {
-//  uncomment the following lines if you want to read/write from files
-//  ifstream cin("input.txt");
-//  ofstream cout("output.txt");
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
 
-    long long A, B, T;
-    cin >> A >> B >> T;
+    int A, B;
+    long T;
 
-    // insert your code here
+    fin>>A>>B>>T;
 
-    cout << 42 << endl; // print the result
+    int tempoAttivita=B-A;
+    int tempoInattivita=24-tempoAttivita;
+
+    long giorniCompletiDown=T/24;
+    long oreRimanentiDown=T%24;
+
+    long oreAttivitaInDownRimanenti = oreRimanentiDown-tempoInattivita;
+    if(oreAttivitaInDownRimanenti<0)
+        oreAttivitaInDownRimanenti=0;
+
+    long minimoDown=(giorniCompletiDown*tempoAttivita)+oreAttivitaInDownRimanenti;
+
+    fout<<minimoDown;
 
     return 0;
 }
