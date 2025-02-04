@@ -1,30 +1,55 @@
-// NOTE: it is recommended to use this even if you don't understand the following code.
-
-#include <iostream>
-#include <fstream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-// input data
-int N;
-vector<int> V, S;
+int main()
+{
 
-int main() {
-//  uncomment the following lines if you want to read/write from files
-//  ifstream cin("input.txt");
-//  ofstream cout("output.txt");
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
 
-    cin >> N;
-    V.resize(N);
-    S.resize(N);
-    for (int i=0; i<N; i++)
-        cin >> V[i];
-    for (int i=0; i<N; i++)
-        cin >> S[i];
+    int N;
 
-    // insert your code here
+    fin>>N;
 
-    cout << 42 << endl; // print the result
-    return 0;
+    vector<int> S,V;
+
+    for(int i=0; i<N; i++)
+    {
+        int a;
+        fin>>a;
+        V.push_back(a);
+    }
+
+    for(int i=0; i<N; i++)
+    {
+        int b;
+        fin>>b;
+        S.push_back(b);
+    }
+
+    int bestSum=-1,currentSum=0;
+    int last=0;
+
+    for(int i=0; i<N; i++)
+    {
+
+        if(last<V[i] && S[i]==1)
+        {
+            currentSum+=V[i];
+            last=V[i];
+        }else
+        {
+            if(bestSum!=currentSum && currentSum > bestSum )
+            {
+                bestSum=currentSum;
+            currentSum=0;
+            }
+            
+        }
+
+    }
+
+    fout<<bestSum;
+
 }

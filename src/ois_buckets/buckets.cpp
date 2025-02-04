@@ -1,27 +1,48 @@
-// NOTE: it is recommended to use this even if you don't understand the following code.
-
-#include <iostream>
-#include <fstream>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
+int main()
+{
 
-// input data
-int N, i;
-vector<int> D;
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
 
-int main() {
-//  uncomment the following lines if you want to read/write from files
-//  ifstream cin("input.txt");
-//  ofstream cout("output.txt");
+    int n;
 
-    cin >> N;
-    D.resize(N);
-    for (int i=0; i<N; i++)
-        cin >> D[i];
+    vector<int> L;
 
-    // insert your code here
+    fin>>n;
 
-    cout << 42; // print the result
-    return 0;
+    for(int i=0; i<n; i++)
+    {
+        int a;
+        fin>>a;
+        L.push_back(a);
+    }
+
+    sort(L.begin(), L.end());
+
+    bool r=true;
+    int last=0;
+
+    for(int i=0; i<n; i++)
+    {
+        
+
+        if(last == L[i])
+        {
+            r=false;
+        }
+        
+        last = L[i];
+
+    }
+
+    if(r==true){
+        fout<<"Ok";
+        }
+    else{
+        fout<<"Impossible";
+        }
+
 }
+

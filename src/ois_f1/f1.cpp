@@ -1,30 +1,62 @@
-// NOTE: it is recommended to use this even if you don't understand the following code.
-
-#include <fstream>
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-// input data
-int N;
-vector<int> H, V;
+int main()
+{
 
-int main() {
-    //  uncomment the following lines if you want to read/write from files
-    //  ifstream cin("input.txt");
-    //  ofstream cout("output.txt");
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
 
-    cin >> N;
-    H.resize(N);
-    for (int i = 0; i < N; i++)
-        cin >> H[i];
-    V.resize(N);
-    for (int i = 0; i < N; i++)
-        cin >> V[i];
+    int N;
+    int tottimeH=0;
+    int totTimeV=0;
+    fin>>N;
 
-    // insert your code here
+    vector<int> H,V;
 
-    cout << 42 << endl; // print the result
-    return 0;
+    for(int i=0; i<N; i++)
+    {
+        int a;
+        fin>>a;
+        H.push_back(1);
+        tottimeH+=H[i];
+    }
+
+    for(int i=0; i<N; i++)
+    {
+        int a;
+        fin>>a;
+        H.push_back(1);
+        totTimeV+=V[i];
+    }
+
+    sort(H.begin(),H.end());
+    sort(V.begin(),V.end());
+
+    int mH = H[0];
+    int mV = V[0];
+
+    if (tottimeH<totTimeV)
+    {
+        fout<<"Hamilton\n";
+    }else
+    {
+        fout<<"Verstappen\n";
+    }
+
+    if(mH<mV)
+    {
+        fout<<"Hamilton\n";
+    }else
+    {
+        fout<<"Verstappen\n";
+    }
+
+    
+    
+    
+
+
+
 }

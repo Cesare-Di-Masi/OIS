@@ -1,22 +1,30 @@
-#include <stdio.h>
-#include <assert.h>
+#include <bits/stdc++.h>
 
-int compra(int N, int M, int A, int B) {
-    // Mettete qui il codice della soluzione
-    return 42;
-}
+using namespace std;
 
-int main() {
-    FILE *fr, *fw;
-    int N, M, A, B;
+int main()
+{
 
-    fr = fopen("input.txt", "r");
-    fw = fopen("output.txt", "w");
+   ifstream cin("input.txt");
+   ofstream cout("output.txt");
 
-    assert(4 == fscanf(fr, "%d%d%d%d", &N, &M, &A, &B));
+   int N,M,A,B;
+   cin>>N>>M>>A>>B;
 
-    fprintf(fw, "%d\n", compra(N, M, A, B));
-    fclose(fr);
-    fclose(fw);
-    return 0;
+   int totPrice=0,LeftTickets=N;
+
+    while(LeftTickets>0)
+    {
+        if(LeftTickets*A>B)
+        {
+            totPrice+=B;
+            LeftTickets-=M;
+        }else
+        {
+            totPrice+=LeftTickets*A;
+            LeftTickets=0;
+        }
+    }
+
+    cout<<totPrice;
 }

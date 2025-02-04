@@ -1,29 +1,49 @@
-/*
- * This template is valid both in C and in C++,
- * so you can expand it with code from both languages.
- */
+#include<bits/stdc++.h>
+using namespace std;
 
-#include <stdio.h>
-#include <assert.h>
+int main()
+{
 
-// constraints
-#define MAXN 1000000
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
 
-// input data
-int N, K, i;
-int T[MAXN];
+    int K=0,N=0;
+    vector<int> L;
 
-int main() {
-//  uncomment the following lines if you want to read/write from files
-//  freopen("input.txt", "r", stdin);
-//  freopen("output.txt", "w", stdout);
+    fin>>N;
+    fin>>K;
 
-    assert(2 == scanf("%d %d", &N, &K));
-    for (i = 0; i < N; i++)
-        assert(1 == scanf("%d", &T[i]));
+    int r=K-1,l=0;
 
-    // insert your code here
+    for(int i=0; i<N; i++)
+    {
+        int a;
+        fin>>a;
+        L.push_back(a);
+    }
 
-    printf("%d\n", 42); // change 42 with actual answer
-    return 0;
+    int currentSum=0;
+
+    for(int i=0; i<K; i++)
+    {
+        currentSum+=L[i];
+    }
+
+    int bestSum=currentSum;
+
+    for(int i=1; i<=N-K; i++)
+    {
+        
+        currentSum= currentSum-L[l]+L[r+1];
+
+        bestSum = max(bestSum,currentSum);
+
+        l++;
+        r++;
+        
+    }
+
+    fout<<bestSum;
+
+
 }

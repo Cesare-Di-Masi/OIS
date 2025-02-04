@@ -1,9 +1,26 @@
-// https://training.olinfo.it/task/easy1
-
 #include <bits/stdc++.h>
+
 using namespace std;
 
 int main()
 {
-        return EXIT_SUCCESS;
+   
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+
+    int N,S,MAX=-1000;
+
+    fin >> N;
+
+    for(int I=0; I<N; I++)
+    {
+
+        fin >> S;
+        if(S>MAX){  MAX=S;  }
+
+    }
+
+    fout << MAX;
+    MAX=0;
+
 }

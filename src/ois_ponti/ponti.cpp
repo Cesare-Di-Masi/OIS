@@ -1,28 +1,57 @@
-#include <stdio.h>
-#include <assert.h>
+#include <bits/stdc++.h>
 
-#define MAXM 100000
+using namespace std;
 
-int costruisci(int N, int M, int da[], int a[]) {
-    // Mettete qui il codice della soluzione
-    return 42;
+void bfs(vector<vector<int>>&g, vector<bool>&vis, int start)
+{
+    queue<int> q;
+    q.push(start);
+    vis[start] = true;
+    while(!q.empty())
+    {
+        int curr = q.front();
+        q.pop();
+
+        for(int vicino : g[curr])
+        {
+            if(!vis[vicino])
+            {
+                vis[vicino] = true;
+                q.push(vicino);
+            }
+        }
+    }
 }
 
+int main()
+{
 
-int da[MAXM], a[MAXM];
+    ifstream cin("input.txt");
+    ofstream cout("output.txt");
 
-int main() {
-    FILE *fr, *fw;
-    int N, M, i;
+    int n, m; cin>>n>>m;
 
-    fr = fopen("input.txt", "r");
-    fw = fopen("output.txt", "w");
-    assert(2 == fscanf(fr, "%d%d", &N, &M));
-    for(i=0; i<M; i++)
-        assert(2 == fscanf(fr, "%d%d", &da[i], &a[i]));
+    vector<vector<int>>g(n);
 
-    fprintf(fw, "%d\n", costruisci(N, M, da, a));
-    fclose(fr);
-    fclose(fw);
-    return 0;
+    for(int i=0; i<m; i++)
+    {
+        int from, to; cin>>from>>to;
+        g[from].push_back(to);
+        g[to].push_back(from);
+    }
+
+    vector<bool> vis(n,false);
+
+    int componenti = 0;
+    for(int i=0; i<n; i++)
+    {
+        if(!vis[i])
+        {
+            bfs(g, vis, i);
+            componenti++;
+        }
+    }
+    cout<<componenti-1;
+
 }
+

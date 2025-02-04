@@ -1,28 +1,57 @@
-/*
- * This template is valid both in C and in C++,
- * so you can expand it with code from both languages.
- */
+#include <bits/stdc++.h>
 
-#include <assert.h>
-#include <stdio.h>
+using namespace std;
 
-// constraints
-#define MAXN 200000
 
-// input data
-int N, i;
-int A[MAXN], D[MAXN];
+int main()
+{
+    ifstream fin ("input.txt");
+    ofstream fout ("output.txt");
 
-int main() {
-  //  uncomment the following lines if you want to read/write from files
-  //  freopen("input.txt", "r", stdin);
-  //  freopen("output.txt", "w", stdout);
+    int n,ta,td;
+    
+    vector<int> arrivi;
+    vector<int> partenze;
 
-  assert(1 == scanf("%d", &N));
-  for (i = 0; i < N; i++) assert(2 == scanf("%d%d", &A[i], &D[i]));
+    fin>>n;
 
-  // insert your code here
+    for(int i=0; i<n; i++)
+    {
+        fin>>ta>>td;
+        arrivi.push_back(ta);
+        partenze.push_back(td);
 
-  printf("%lld\n", 42);  // change 42 with actual answer
-  return 0;
+    }
+
+    sort(arrivi.begin(), arrivi.end());
+    sort(partenze.begin(), partenze.end());
+
+
+    int ia=0, id=0;
+    long persone =1;
+    long stretteDiMano=0;
+
+    //finche non sono esauriti i due insiemi
+    while(!(ia==n && id==n))
+    {
+        //se c'é un arrivo
+        if(id==n || (id<n  && ia<n && arrivi[ia]<partenze[id]))
+        {
+            stretteDiMano += persone;
+            persone += 1;
+
+            ia++;
+        }
+        else{
+            //se éuna partenza
+            stretteDiMano += persone-1;
+            persone -= 1;
+            id++;
+        }
+
+    }
+
+    fout<<stretteDiMano;
+
+    return 0;
 }

@@ -1,21 +1,65 @@
-#include <stdio.h>
-#include <assert.h>
+#include <bits/stdc++.h>
 
-int empty(int N) {
-    // insert your code here
-    return 42;
-}
+using namespace std;
 
+int main()
+{
 
-int main() {
-    FILE *fr, *fw;
-    int N, i;
+   ifstream cin("input.txt");
+   ofstream cout("output.txt");
 
-    fr = fopen("input.txt", "r");
-    fw = fopen("output.txt", "w");
-    assert(1 == fscanf(fr, "%d", &N));
-    fprintf(fw, "%d\n", empty(N));
-    fclose(fr);
-    fclose(fw);
-    return 0;
+    int a; cin>>a;
+    map<int,int> dist;
+    dist[a]=0;
+    queue<int>q;
+    q.push(a);
+
+    while(!q.empty())
+    {
+        int curr = q.front();
+        q.pop();
+
+        int newDist = dist[curr] + 1;
+        
+        if(curr == 0)
+        {
+            cout << dist[curr] << "\n";
+            return 0;
+        }
+
+        //aggiungo 1
+        if(!dist.count(curr + 1))
+        {
+            dist[curr+1] = newDist;
+            q.push(curr+1);
+        }
+
+        //tolgo 1
+        if(!dist.count(curr - 1))
+        {
+            dist[curr - 1] = newDist;
+            q.push(curr - 1);
+        }
+
+        //moltiplico X 2
+        if(!dist.count(curr * 2))
+        {
+            dist[curr * 2] = newDist;
+            q.push(curr * 2);
+        }
+
+        //divido X 3 o potenza di 3
+        if(curr%3 == 0)
+        {
+            //divido finchè posso dividere X 3
+           while(curr%3 == 0) curr/=3;
+           if(!dist.count(curr))
+           {
+             dist[curr] = newDist;
+             q.push(curr);
+           }
+        }
+
+    }
+
 }

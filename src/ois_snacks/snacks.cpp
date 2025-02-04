@@ -1,26 +1,48 @@
-// NOTE: it is recommended to use this even if you don't understand the following code.
-
-#include <fstream>
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main() {
-    // uncomment the following lines if you want to read/write from files
-    // ifstream cin("input.txt");
-    // ofstream cout("output.txt");
+ifstream fin("input.txt");
+ofstream fout("output.txt");
+
+int main()
+{
+    ifstream input("input.txt");
+    ofstream output("output.txt");
 
     int N, X;
-    cin >> N >> X;
+    input >> N >> X;
 
-    vector<int> L(N);
+    vector<int> loudness(N);
+
     for (int i = 0; i < N; i++) {
-        cin >> L[i];
+        input >> loudness[i];
     }
 
-    // insert your code here
+    sort(loudness.begin(), loudness.end());
 
-    cout << 42 << endl; // print the result
+    int time = 0;
+
+    int i;
+    for(i = 1; i<N; i=i+2)
+    {
+        if(loudness[i]+loudness[i-1]<=X)
+        {
+           
+           time = time+1;
+        }
+        else
+        {
+            
+            time = time+2;
+        }
+    }
+    if(i==N)
+        time=time+1;//vado avanti di due in due se sono dispari ho saltato l'ultimo
+
+
+    output << time;
+
+
     return 0;
 }

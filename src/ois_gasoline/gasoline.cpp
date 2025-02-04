@@ -1,30 +1,55 @@
-/*
- * This template is valid both in C and in C++,
- * so you can expand it with code from both languages.
- */
+#include <bits/stdc++.h>
+using namespace std;
 
-#include <assert.h>
-#include <stdio.h>
+int main()
+{
 
-// constraints
-#define MAXN 1000000
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
 
-// input data
-int N, i;
-int P[MAXN];
-int G[MAXN];
+    int N;
+    fin>>N;
 
-int main() {
-  //  uncomment the following lines if you want to read/write from files
-  //  freopen("input.txt", "r", stdin);
-  //  freopen("output.txt", "w", stdout);
+    vector<int> P;
+    vector<int> G;
 
-  assert(1 == scanf("%d", &N));
-  for (i = 0; i < N; i++) assert(1 == scanf("%d", &P[i]));
-  for (i = 0; i < N; i++) assert(1 == scanf("%d", &G[i]));
+    for(int i=0; i<N;i++)
+    {
+        int a;
+        fin>>a;
+        P.push_back(a);
+    }
 
-  // insert your code here
+    for(int i=0; i<N;i++)
+    {
+        int a;
+        fin>>a;
+        G.push_back(a);
+    }
 
-  printf("%lld\n", 42LL);  // print the result
-  return 0;
+    int last=0;
+    int lastPrice=P[last];
+    int totPrice=lastPrice*G[last];
+
+    for(int i=1; i<N; i++)
+    {
+
+        int count=i;
+        while(G[count]*lastPrice< P[count]*G[count])
+
+        if(G[i]*lastPrice < P[i]*G[i] )
+        {
+            totPrice+=G[i]*lastPrice;
+        }
+        else
+        {
+            totPrice+=P[i]*G[i];
+        }
+
+        lastPrice=P[i];
+
+    }
+
+    fout<<totPrice;
+
 }
