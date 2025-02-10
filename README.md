@@ -12,3 +12,5 @@
  - [📁](./src/ois_killer/) **[ois_killer](https://training.olinfo.it/task/ois_killer)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
  - [📁](./src/ois_pyramid/) **[ois_pyramid](https://training.olinfo.it/task/ois_pyramid)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
  - [📁](./src/ois_binaria/) **[ois_binaria](https://training.olinfo.it/task/ois_binaria)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/preoii_dante/) **[preoii_dante](https://training.olinfo.it/task/preoii_dante)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/oii_aemilia/) **[oii_aemilia](https://training.olinfo.it/task/oii_aemilia)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
