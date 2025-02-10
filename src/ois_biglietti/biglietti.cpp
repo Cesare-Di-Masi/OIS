@@ -13,6 +13,22 @@ int main()
 
    int totPrice=0,LeftTickets=N;
 
+    if(N==1)
+    {
+        if(A<B)
+        {
+            cout<<A;
+        }else
+        {
+            cout<<B;
+        }
+
+        return 0;
+
+    }
+
+
+
     while(LeftTickets>0)
     {
         if(LeftTickets*A>B)
@@ -27,4 +43,5 @@ int main()
     }
 
     cout<<totPrice;
+    return 0;
 }

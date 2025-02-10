@@ -1,2 +1,14 @@
  - [📁](./src/ois_lootboxes/) **[ois_lootboxes](https://training.olinfo.it/task/ois_lootboxes)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
  - [📁](./src/ois_tournament3/) **[ois_tournament3](https://training.olinfo.it/task/ois_tournament3)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_kmtogo/) **[ois_kmtogo](https://training.olinfo.it/task/ois_kmtogo)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_frame/) **[ois_frame](https://training.olinfo.it/task/ois_frame)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_matred/) **[ois_matred](https://training.olinfo.it/task/ois_matred)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_valentinesday/) **[ois_valentinesday](https://training.olinfo.it/task/ois_valentinesday)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_twolanes/) **[ois_twolanes](https://training.olinfo.it/task/ois_twolanes)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_mana/) **[ois_mana](https://training.olinfo.it/task/ois_mana)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_dance/) **[ois_dance](https://training.olinfo.it/task/ois_dance)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/cestini/) **[cestini](https://training.olinfo.it/task/cestini)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_andibandi/) **[ois_andibandi](https://training.olinfo.it/task/ois_andibandi)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_killer/) **[ois_killer](https://training.olinfo.it/task/ois_killer)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_pyramid/) **[ois_pyramid](https://training.olinfo.it/task/ois_pyramid)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_binaria/) **[ois_binaria](https://training.olinfo.it/task/ois_binaria)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
