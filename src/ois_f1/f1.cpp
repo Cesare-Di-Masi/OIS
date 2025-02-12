@@ -4,61 +4,57 @@ using namespace std;
 
 int main()
 {
-
     ifstream cin("input.txt");
     ofstream cout("output.txt");
 
     int N;
-    cin>>N;
+    cin >> N;
 
-    int bestH=100001;
-    int bestV=100001;
+    int bestH = 100001;
+    int bestV = 100001;
 
-    int H,V;
+    int totalH = 0;
+    int totalV = 0;
 
-    for(int i=0; i<N; i++)
+    for (int i = 0; i < N; i++)
     {
-        int a=0;
-        cin>>a;
-        H+=a;
-        if(a<bestH)
+        int a = 0;
+        cin >> a;
+        totalH += a;
+        if (a < bestH)
         {
-            bestH=a;
+            bestH = a;
         }
     }
 
-    for(int i=0; i<N; i++)
+    for (int i = 0; i < N; i++)
     {
-        int a=0;
-        cin>>a;
-        V+=a;
-        if(a<bestV)
+        int a = 0;
+        cin >> a;
+        totalV += a;
+        if (a < bestV)
         {
-            bestV=a;
+            bestV = a;
         }
     }
 
-    if (H<V)
+    if (totalH < totalV)
     {
-        cout<<"Hamilton\n";
-    }else
+        cout << "Hamilton\n";
+    }
+    else
     {
-        cout<<"Verstappen\n";
+        cout << "Verstappen\n";
     }
 
-    if(bestH<bestV)
+    if (bestH < bestV)
     {
-        cout<<"Hamilton"<<'\n';
-    }else
-    {
-        cout<<"Verstappen"<<'\n';
+        cout << "Hamilton\n";
     }
-    
+    else
+    {
+        cout << "Verstappen\n";
+    }
 
-    
     return 0;
-    
-
-
-
 }
