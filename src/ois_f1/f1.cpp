@@ -5,56 +5,58 @@ using namespace std;
 int main()
 {
 
-    ifstream fin("input.txt");
-    ofstream fout("output.txt");
+    ifstream cin("input.txt");
+    ofstream cout("output.txt");
 
     int N;
-    int tottimeH=0;
-    int totTimeV=0;
-    fin>>N;
+    cin>>N;
 
-    vector<int> H,V;
+    int bestH=100001;
+    int bestV=100001;
 
-    for(int i=0; i<N; i++)
-    {
-        int a;
-        fin>>a;
-        H.push_back(1);
-        tottimeH+=H[i];
-    }
+    int H,V;
 
     for(int i=0; i<N; i++)
     {
-        int a;
-        fin>>a;
-        H.push_back(1);
-        totTimeV+=V[i];
+        int a=0;
+        cin>>a;
+        H+=a;
+        if(a<bestH)
+        {
+            bestH=a;
+        }
     }
 
-    sort(H.begin(),H.end());
-    sort(V.begin(),V.end());
-
-    int mH = H[0];
-    int mV = V[0];
-
-    if (tottimeH<totTimeV)
+    for(int i=0; i<N; i++)
     {
-        fout<<"Hamilton\n";
+        int a=0;
+        cin>>a;
+        V+=a;
+        if(a<bestV)
+        {
+            bestV=a;
+        }
+    }
+
+    if (H<V)
+    {
+        cout<<"Hamilton\n";
     }else
     {
-        fout<<"Verstappen\n";
+        cout<<"Verstappen\n";
     }
 
-    if(mH<mV)
+    if(bestH<bestV)
     {
-        fout<<"Hamilton\n";
+        cout<<"Hamilton"<<'\n';
     }else
     {
-        fout<<"Verstappen\n";
+        cout<<"Verstappen"<<'\n';
     }
+    
 
     
-    
+    return 0;
     
 
 
