@@ -1,26 +1,31 @@
-// NOTE: it is recommended to use this even if you don't understand the following code.
-
-#include <bits/stc++.h>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-int main() {
-    // uncomment the two following lines if you want to read/write from files
-    // ifstream cin("input.txt");
-    // ofstream cout("output.txt");
-
-    int N;
-    cin >> N;
-
-    vector<int> D(10);
-
-
-    // INSERT YOUR CODE HERE
-
-
-    for (int i = 0; i < 10; ++i)
-        cout << D[i] << " ";
-    cout << endl;
-
-    return 0;
+int main(){
+    int n;
+    cin>>n;
+    map<int,long long>V;
+    int ncopy=n;
+    int len=0;
+    int k=0;
+    for(int i=0;i<10;i++){
+        V[i]=0;
+    }
+    int l=n;
+    int val=0;
+    int iCopy=1;
+    for(int i=1;i<=n;i++){
+        iCopy=i;
+        while(true){
+            l=iCopy%10;
+            V[l]+=1;//l è il numero
+            iCopy=iCopy/10;
+            if(iCopy<=0){
+                break;
+            }
+        }
+    }
+    for(int i=0;i<10;i++){
+        cout<<V[i]<<" ";
+    }
+    
 }
