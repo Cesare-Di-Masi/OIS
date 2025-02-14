@@ -8,26 +8,10 @@ int main()
    ifstream cin("input.txt");
    ofstream cout("output.txt");
 
-   int N,M,A,B;
+   long long N,M,A,B;
    cin>>N>>M>>A>>B;
 
-   int totPrice=0,LeftTickets=N;
-
-    if(N==1)
-    {
-        if(A<B)
-        {
-            cout<<A;
-        }else
-        {
-            cout<<B;
-        }
-
-        return 0;
-
-    }
-
-
+   long long totPrice=0,LeftTickets=N;
 
     while(LeftTickets>0)
     {
@@ -43,5 +27,4 @@ int main()
     }
 
     cout<<totPrice;
-    return 0;
 }
