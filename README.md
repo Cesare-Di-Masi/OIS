@@ -17,3 +17,4 @@
  - [📁](./src/ois_tournament/) **[ois_tournament](https://training.olinfo.it/task/ois_tournament)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
  - [📁](./src/ois_nonna/) **[ois_nonna](https://training.olinfo.it/task/ois_nonna)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
  - [📁](./src/ois_subjects/) **[ois_subjects](https://training.olinfo.it/task/ois_subjects)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_scrigni/) **[ois_scrigni](https://training.olinfo.it/task/ois_scrigni)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(74 222 128); color:black">  100  </span>
