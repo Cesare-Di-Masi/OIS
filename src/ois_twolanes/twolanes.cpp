@@ -9,8 +9,8 @@ using namespace std;
 
 int main() {
     // uncomment the two following lines if you want to read/write from files
-    // ifstream cin("input.txt");
-    // ofstream cout("output.txt");
+    ifstream cin("input.txt");
+    ofstream cout("output.txt");
 
     int N;
     cin >> N;
@@ -24,10 +24,20 @@ int main() {
     int ans = 0;
 
 
-    // INSERT YOUR CODE HERE
+    for(int i=0;i<N;i++)
+    {
+        if(L[i] == 'G' || R[i] == 'G')
+        {
+            ans++;
+        }else
+        {
+            break;
+        }
 
+
+    }
 
     cout << ans << endl;
+            return 0;
 
-    return 0;
 }
