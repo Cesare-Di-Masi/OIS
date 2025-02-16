@@ -1,16 +1,13 @@
 // NOTE: it is recommended to use this even if you don't understand the following code.
 
-#include <fstream>
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int main() {
     // uncomment the two following lines if you want to read/write from files
-    // ifstream cin("input.txt");
-    // ofstream cout("output.txt");
+    ifstream cin("input.txt");
+    ofstream cout("output.txt");
 
     int N, M;
     cin >> N >> M;
@@ -23,10 +20,20 @@ int main() {
     for (int i = 0; i < N; ++i)
         cin >> P[i];
 
+
     int maxChocolates = 0;
 
 
-    // INSERT YOUR CODE HERE
+    for(int i=0;i<N;i++)
+    {
+        if(C[i]%2==0)
+        {
+            if(C[i]>maxChocolates && P[i]<=M)
+            {
+                maxChocolates = C[i];
+            }
+        }
+    }
 
 
     cout << maxChocolates << endl;
