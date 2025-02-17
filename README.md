@@ -20,3 +20,4 @@
  - [📁](./src/ois_scrigni/) **[ois_scrigni](https://training.olinfo.it/task/ois_scrigni)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(74 222 128); color:black">  100  </span>
  - [📁](./src/abc_rsa/) **[abc_rsa](https://training.olinfo.it/task/abc_rsa)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
  - [📁](./src/massimo/) **[massimo](https://training.olinfo.it/task/massimo)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/ois_tournament2/) **[ois_tournament2](https://training.olinfo.it/task/ois_tournament2)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
