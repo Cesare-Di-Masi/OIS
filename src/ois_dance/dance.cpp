@@ -29,10 +29,19 @@ int main() {
     string K = "";
 
 
-    // INSERT YOUR CODE HERE
+    for(int i=0; i<N; i++)
+    {
+        if(abs(A[i]-B[i])>D)
+        {
+            K="NO";
+            cout<<K;
+            return 0;
+        }
 
 
-    cout << K << endl;
+    }
+
+    cout << "YES" << endl;
 
     return 0;
 }
