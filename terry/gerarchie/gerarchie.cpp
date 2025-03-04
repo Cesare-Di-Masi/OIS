@@ -44,14 +44,13 @@ int solve() {
 
     for (int i=0; i<N; i++) {
         cin >> R[i] >> C[i];
-        if(C[i]!=-1)
+        if(R[i]!=-1)
         L[C[i]].push_back(i);
         else
         start =  i;
     }
 
     ricorsiva(N,start,R,L);
-
     return counter;
 }
 
