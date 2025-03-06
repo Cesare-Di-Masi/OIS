@@ -12,7 +12,6 @@ int ricorsiva(int N,int pos,int B[],vector<vector<int>>& L)
     return 0;
 
     int scendi=0,scendiMax=0, nonscendi=0;
-
     if(L[pos].size()>0)
     {
         nonscendi = B[pos];
@@ -50,7 +49,7 @@ int solve() {
         start =  i;
     }
 
-    ricorsiva(N,start,R,L);
+    ricorsiva(N,start,C,L);
     return counter;
 }
 

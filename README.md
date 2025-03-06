@@ -22,3 +22,4 @@
  - [📁](./src/massimo/) **[massimo](https://training.olinfo.it/task/massimo)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
  - [📁](./src/ois_tournament2/) **[ois_tournament2](https://training.olinfo.it/task/ois_tournament2)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
  - [📁](./src/ois_rugby/) **[ois_rugby](https://training.olinfo.it/task/ois_rugby)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
+ - [📁](./src/mat_convegno/) **[mat_convegno](https://training.olinfo.it/task/mat_convegno)** <span style="white-space: pre; border-radius:.5rem; background-color:rgb(248 113 113); color:black">  0  </span>
